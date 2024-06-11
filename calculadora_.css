@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seleccione el tipo de cálculo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Seleccione el tipo de cálculo:</h1>
+  <label><input type="radio" name="calculation" value="AcidoFuerte">Ácido Fuerte</label>
+  <label><input type="radio" name="calculation" value="AcidoDebil">Ácido Débil</label>
+  <label><input type="radio" name="calculation" value="BaseFuerte">Base Fuerte</label>
+  <label><input type="radio" name="calculation" value="BaseDebil">Base Débil</label>
+  <button id="continueBtn">Continuar</button>
+</div>
+<script>
+  document.getElementById('continueBtn').addEventListener('click', function() {
+    var selectedCalculation = document.querySelector('input[name="calculation"]:checked');
+    if (selectedCalculation === null) {
+      alert('Por favor, seleccione un tipo de cálculo.');
+      return;
+    }
+    var calculationType = selectedCalculation.value;
+    // Aquí puedes hacer lo que necesites con el tipo de cálculo seleccionado
+    // Por ejemplo, puedes enviarlo a un servidor o ejecutar más código JavaScript
+    console.log('Tipo de cálculo seleccionado:', calculationType);
+  });
+</script>
+</body>
+</html>
